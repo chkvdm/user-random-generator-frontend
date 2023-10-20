@@ -1,0 +1,89 @@
+.App {
+  margin: 0;
+  padding: 0;
+  background: #74ebd5;
+  background: -webkit-linear-gradient(to right, #74ebd5, #acb6e5);
+  background: linear-gradient(to right, #74ebd5, #acb6e5);
+  background-size: cover;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.user-container {
+  padding-top: 3em;
+  padding-bottom: 2.5em;
+}
+
+.control-panel {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding-top: 1em;
+  padding-bottom: 0;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+}
+
+div.inline {
+  float: left;
+  padding-top: 0.5em;
+  margin-right: 15px;
+  color: rgb(77, 1, 77);
+}
+
+h5 {
+  padding-top: 0.3em;
+}
+
+input {
+  width: 100px !important;
+}
+
+.slider {
+  padding-top: 4px;
+}
+
+.btn {
+  padding: 5px 12px !important;
+}
+
+.btn-form {
+  color: rgb(25, 25, 25) !important;
+  border-radius: 6px !important;
+  border: 1px solid rgb(220, 220, 220) !important;
+}
+
+.btn-form:hover {
+  background-color: rgb(233, 147, 233) !important;
+  color: white !important;
+  border-color: #c9aaff !important;
+}
+
+.table-container-bottom {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding-top: 0.5em;
+  background-color: white;
+}
+
+.form-control {
+  box-shadow: none !important;
+  outline: auto 0px !important;
+}
+
+.form-control:focus {
+  border-width: 1px;
+  border-color: rgb(233, 147, 233) !important;
+}
+
+.form-select {
+  box-shadow: none !important;
+  outline: auto 0px !important;
+}
+
+.form-select:focus {
+  border-width: 1px;
+  border-color: rgb(233, 147, 233) !important;
+}
