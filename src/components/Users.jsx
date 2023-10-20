@@ -10,6 +10,7 @@ import RegionPanel from './RegionPanel';
 import ErrorPanel from './ErrorPanel';
 import SeedPanel from './SeedPanel';
 import Table from './Table';
+import config from '../config.js';
 
 const columns = [
   {
@@ -67,7 +68,7 @@ const Users = () => {
         errorValue,
       ],
       queryFn: async ({ pageParam = 0 }) => {
-        const url = new URL('/api/v1/users', 'http://localhost:3001');
+        const url = new URL('/api/v1/users', `${config.apiUrl}`);
         url.searchParams.set('seed', `${seed}`);
         url.searchParams.set('pageNumber', `${pageParam}`);
         url.searchParams.set('count', `${10}`);
