@@ -1,6 +1,8 @@
 import React from 'react';
 import { MaterialReactTable } from 'material-react-table';
-import { Typography } from '@mui/material';
+import { Box, Typography, Button } from '@mui/material';
+import FileDownloadIcon from '@mui/icons-material/FileDownload';
+import { mkConfig, generateCsv, download } from 'export-to-csv';
 
 const Table = ({
   columns,
@@ -20,6 +22,17 @@ const Table = ({
   sorting,
   rowVirtualizerInstanceRef,
 }) => {
+  const csvConfig = mkConfig({
+    fieldSeparator: ',',
+    decimalSeparator: '.',
+    useKeysAsHeaders: true,
+  });
+
+  const hadleExportCsv = () => {
+    const csv = generateCsv(csvConfig)(flatData);
+    download(csvConfig)(csv);
+  };
+
   return (
     <MaterialReactTable
       columns={columns}
@@ -27,6 +40,23 @@ const Table = ({
       enablePagination={false}
       enableRowNumbers
       enableRowVirtualization
+      renderTopToolbarCustomActions={() => (
+        <Box
+          sx={{
+            display: 'flex',
+            gap: '16px',
+            padding: '8px',
+            flexWrap: 'wrap',
+          }}
+        >
+          <Button
+            onClick={() => hadleExportCsv()}
+            startIcon={<FileDownloadIcon />}
+          >
+            Export to CSV
+          </Button>
+        </Box>
+      )}
       muiTableContainerProps={{
         ref: tableContainerRef,
         sx: { maxHeight: '520px' },
